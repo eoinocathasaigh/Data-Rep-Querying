@@ -11,8 +11,6 @@ let addTask = (newTask)=>{
     //Printing out the new length of the array after insertion
     console.log("New length of array is: " +tasks.length);
 }
-//Adding Eoin to the array
-addTask("Eoin");
 
 //Listing all the tasks in the array
 let listAllTasks = () => {
@@ -23,10 +21,19 @@ let listAllTasks = () => {
     })
 }
 
-//Calling arrow function to list all tasks
-listAllTasks();
-
 //Removing a task from the array
-let deleteTask = (task) => {
-    
+let deleteTask = (value) => {
+    //Finding the index of the chosen value
+    let index = tasks.indexOf(value);
+    //Splicing(removing) the item from the array
+    tasks.splice(index, 1);
+    //Notifying the user that the task is complete
+    console.log("Item in the array has successfully been deleted!");
+    //Printing the new length of the array after deletion
+    console.log("New Length of array is: " + tasks.length);
 }
+
+//Calling all the functions
+addTask("Eoin"); // - Adds Eoin to the array
+listAllTasks(); // - Lists all elements in the array
+deleteTask("Eoin"); // Removes Eoin from the array
