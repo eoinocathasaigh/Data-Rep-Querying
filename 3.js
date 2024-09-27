@@ -26,11 +26,21 @@ let deleteTask = (value) => {
     //Finding the index of the chosen value
     let index = tasks.indexOf(value);
     //Splicing(removing) the item from the array
-    tasks.splice(index, 1);
-    //Notifying the user that the task is complete
-    console.log("Item in the array has successfully been deleted!");
-    //Printing the new length of the array after deletion
-    console.log("New Length of array is: " + tasks.length);
+    //Case to catch if the value is actualy valid
+    if(index > -1)
+    {
+        tasks.splice(index, 1);
+        //Notifying the user that the task is complete
+        console.log("Item in the array has successfully been deleted!");
+        //Printing the new length of the array after deletion
+        console.log("New Length of array is: " + tasks.length);
+    }
+    //If the value doesnt exist
+    else
+    {
+        console.log(task + " not found within the array - Please try something else");
+    }
+    
 }
 
 //Calling all the functions
